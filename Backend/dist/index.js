@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
     res.send("hi there");
 });
 const wss = new ws_1.WebSocketServer({ server: httpServer });
-let user = 0;
+// let user=0;
 wss.on('connection', function connection(ws) {
     ws.on('error', console.error);
     ws.on('message', function message(data, isBinary) {
@@ -23,6 +23,6 @@ wss.on('connection', function connection(ws) {
             }
         });
     });
-    console.log("user", ++user);
+    //   console.log("user",++user);
     ws.send('Hello! Message From Server!!');
 });
